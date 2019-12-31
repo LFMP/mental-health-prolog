@@ -13,7 +13,7 @@ level(Y,Z) :-
 	!.
 
 % O grau de cada doenca teve como base o questionario DASS 21
-% a soma maxima para cada doenca e de 42 pontos
+% a soma maxima para cada doenca eh de 21 pontos
 
 grau(doenca(deprecao),X,Y) :-
 	X < 7,
