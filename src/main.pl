@@ -2,7 +2,7 @@
 
 %% grau() is det
 % predicado que carrega todo o sistema e apresenta o resultado do teste
-start() :-
+start:-
     questionario(A, B, C),
     writeln(''),
     writeln('Transtornos'),
