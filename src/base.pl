@@ -60,6 +60,20 @@ grau(doenca(stress), X, Y) :-
     Y is 2,
     !.
 
+:-begin_tests(graudoenca).
+
+test(semDeprecao) :- grau(doenca(deprecao), 6, 0).
+test(semAnsiedade) :- grau(doenca(ansiedade), 5, 0).
+test(semStress) :- grau(doenca(stress), 9, 0).
+test(mediaDeprecao) :- grau(doenca(deprecao), 10, 1).
+test(mediaAnsiedade) :- grau(doenca(ansiedade), 9, 1).
+test(medioStress) :- grau(doenca(stress), 12, 1).
+test(altaDeprecao) :- grau(doenca(deprecao), 17, 2).
+test(altaAnsiedade) :- grau(doenca(ansiedade), 12, 2).
+test(altoStress) :- grau(doenca(stress), 20, 2).
+
+:-end_tests(graudoenca).
+
 diagnostico(X) :-
 	X == 0,
 	write_ln('Não há transtorno'), !.
