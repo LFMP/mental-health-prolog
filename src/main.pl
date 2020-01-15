@@ -1,5 +1,7 @@
 :- include('base.pl').
 
+%% grau() is det
+% predicado que carrega todo o sistema e apresenta o resultado do teste
 start() :-
     questionario(A, B, C),
     writeln(''),

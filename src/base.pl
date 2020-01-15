@@ -1,4 +1,5 @@
 :-include('perguntas.pl').
+:- use_module(library(plunit)).
 % Doencas a serem detectadas
 doenca(deprecao).
 doenca(ansiedade).
@@ -6,6 +7,10 @@ doenca(stress).
 
 % O grau de cada doenca teve como base o questionario DASS 21
 % a soma maxima para cada doenca eh de 21 pontos
+
+%% grau(+doenca, +X, ?Y)(+X, ?Y) is det
+%
+% Verdadeiro se X pertence ao valor determinado para cada nivel de doenca.
 grau(doenca(deprecao), X, Y) :-
     X<7,
     Y is 0,
@@ -67,6 +72,7 @@ diagnostico(X) :-
 	X == 2,
 	write_ln('Nível alto de transtorno'), !.
 
+%% questionario(+X, +Y, +Z) is det
 % Predicado que calcula o nivel de transtorno
 questionario(Deprecao, Ansiedade, Stress) :-
 	pergunta1(0,Depre),
@@ -93,7 +99,6 @@ questionario(Deprecao, Ansiedade, Stress) :-
 	X = Depre7,
 	Y = Ans7,
 	Z = Str7,
-	
 	grau(doenca(deprecao),X, SaidaD),
 	Deprecao is SaidaD,
 	grau(doenca(ansiedade),Y,SaidaA),

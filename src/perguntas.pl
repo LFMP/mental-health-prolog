@@ -1,3 +1,5 @@
+% Definicao de todas as perguntas e acumucalacao de valores
+
 pergunta1(Depre,Y) :-
 	write_ln('Eu tive dificuldade para me acalmar'),
 	read(user_input,X),
